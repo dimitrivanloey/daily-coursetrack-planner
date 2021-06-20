@@ -50,11 +50,22 @@ for meeting in meetings_list:
         line = line1 + num_line + num_line2 + info_line
         line_list.append(line)
 
-teller = 1
+
+runners = 0
+num_races = 0
+for meeting in meetings_list:
+    print(f"{meeting['name']} - {meeting['type']} - {meeting['operator']}")
+    for race in meeting['races']:
+        runners += int(race['runners'])
+        num_races += 1
+print(f"{runners} runners in {num_races} races!")
+print('')
 for line in sorted(line_list):
     print(f"{line}")
     print('')
-    teller += 1
+
+
+
 
 
 
